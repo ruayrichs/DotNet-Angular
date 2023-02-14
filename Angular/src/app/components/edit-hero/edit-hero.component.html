@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table">
+    <tbody *ngIf="hero">
+      <tr>
+        <td>
+          Name
+          <input [(ngModel)]="hero.name" class="form-control" type="text" placeholder="Name" />
+        </td>
+        <td>
+          First Name
+          <input [(ngModel)]="hero.firstName" class="form-control" type="text"  placeholder="First Name" />
+        </td>
+        <td>
+          Last Name
+          <input [(ngModel)]="hero.lastName" class="form-control" type="text"  placeholder="Last Name" />
+        </td>
+        <td>
+          Place
+          <input [(ngModel)]="hero.place" class="form-control" type="text" placeholder="Place" />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <button type="button" class="btn btn-success float-right" (click)="createHero(hero)" *ngIf="!hero.id">Create</button>&nbsp;
+          <button type="button" class="btn btn-warning" (click)="updateHero(hero)" *ngIf="hero.id">Save</button>&nbsp;
+          <button type="button" class="btn btn-danger" (click)="deleteHero(hero)" *ngIf="hero.id">Delete</button>&nbsp;
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
